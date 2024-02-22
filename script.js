@@ -44,21 +44,44 @@ function playGame (playerSelection, enemySelection) {
     } else if (enemySelection === "SWORD" && playerSelection === "LANCE" ||
     enemySelection === "AXE" && playerSelection === "SWORD" ||
     enemySelection === "LANCE" && playerSelection === "AXE") {
-        scoreInfo.textContent = "You lost!";
+        scoreInfo.textContent = "You lose the round!";
         scoreMessage.textContent = `${playerSelection} is beaten by ${enemySelection}`;
         enemyScore++;
         enemyScoreText.textContent = `Enemy: ${enemyScore}`;
         checkEnemyScore(enemyScore);
     } else {
-        scoreInfo.textContent = "You won!";
+        scoreInfo.textContent = "You win the round!";
         scoreMessage.textContent = `${playerSelection} beats ${enemySelection}`;
         playerScore++;
         playerScoreText.textContent = `Player: ${playerScore}`;
         checkPlayerScore(playerScore);
     }
+
+    switch(enemySelection) {
+        case 'SWORD':
+            setEnemyWeaponImage("sword");
+            break;
+        case 'AXE':
+            setEnemyWeaponImage("axe");
+            break;
+        case 'LANCE':
+            setEnemyWeaponImage("lance");
+            break;
+    }
 };
 
 const buttons = document.querySelector(".buttons");
+
+const playerWeapon = document.querySelector("#playerWeapon");
+const enemyWeapon = document.querySelector("#enemyWeapon");
+
+function setEnemyWeaponImage(imageName) {
+    enemyWeapon.setAttribute("src", `images/${imageName}.png`);
+};
+
+function setPlayerWeaponImage(imageName) {
+    playerWeapon.setAttribute("src", `images/${imageName}.png`);
+};
 
 buttons.addEventListener ("click", (event) => {
     let target = event.target;
@@ -68,16 +91,19 @@ buttons.addEventListener ("click", (event) => {
             playerSelection = "SWORD";
             enemySelection = getEnemyChoice();
             playGame(playerSelection, enemySelection);
+            setPlayerWeaponImage("sword");
             break;
         case 'axeBtn':
             playerSelection = "AXE";
             enemySelection = getEnemyChoice();
             playGame(playerSelection, enemySelection);
+            setPlayerWeaponImage("axe");
             break;
         case 'lanceBtn':
             playerSelection = "LANCE";
             enemySelection = getEnemyChoice();
             playGame(playerSelection, enemySelection);
+            setPlayerWeaponImage("lance");
             break;
     }
 });

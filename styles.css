@@ -79,8 +79,9 @@ body {
 }
 
 .scores-container {
+    position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 3.5rem auto;
     width: 50rem;
 }
@@ -116,10 +117,10 @@ body {
 .modal-content-small {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin: 15% auto;
-    height: 35%;
+    margin: 12% auto;
     width: 25%;
+    max-width: 300px;
+    padding: 2.5rem;
 }
 
 .close {
@@ -178,4 +179,13 @@ body {
     font-size: 3rem;
     padding: 0.75rem 1.5rem;
     font-family: "FireEmblem";
+    margin-top: 1.5rem;
+}
+
+.versus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7rem;
 }
