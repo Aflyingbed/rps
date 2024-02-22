@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --royal-blue: #4169e1;
+    --crimson-red: #dc143c;
+    --forest-green: #228b22;
+    --gold: #ffd700;
+    --silver: #c0c0c0;
+    --white: #ffffff;
+    --black: #000000;
+}  
+
+@font-face {
+    font-family: "DarkSouls";
+    src: url(fonts/DarkSouls.ttf);
+}
+
+@font-face {
+    font-family: "FireEmblem";
+    src: url(/Fonts/FireEmblem.ttf);
+}
+
+@font-face {
+    font-family: "SFPlayer";
+    src: url(fonts/SFPlayer.ttf);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+header {
+    padding: 2rem;
+    background-color: var(--royal-blue);
+    color: var(--black);
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-style: italic;
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin-top: -1rem;
+}
+
+body {
+    font-family: "FireEmblem";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 1280px;
+}
+
+.scoreboard {
+    font-size: x-large;
+    width: 100%;
+}
+
+.score {
+    font-family: "SFPlayer";
+}
+
+.score-info,
+.score-message {
+    margin-bottom: 1rem;
+}
+
+.scores-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3.5rem auto;
+    width: 50rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2b4c7c;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 33%;
+}
+
+.modal-content-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 15% auto;
+    height: 35%;
+    width: 25%;
+}
+
+.close {
+  position: absolute;
+  top: 0.1rem;
+  right: 1rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.howtoDesc {
+    font-size: x-large;
+}
+
+.modal-content-big {
+    position: relative;
+    max-width: 33vw;
+    margin: 3.3% auto;
+}
+
+.modal-content-big > img {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.modal-title {
+    font-size: 4.5rem;
+    font-family: 'DarkSouls';
+}
+
+.weapons-btn {
+    width: 12rem;
+    height: 12rem;
+}
+
+.weapon-img {
+    transform: scale(0.93);
+    transition: transform 0.2s ease-out;
+}
+
+.weapons-btn:hover .weapon-img {
+    transform: scale(1);
+}
+
+.btn {
+    border-radius: 1rem;
+    border: 0;
+}
+
+.endBtn {
+    background-color: var(--royal-blue);
+    font-size: 3rem;
+    padding: 0.75rem 1.5rem;
+    font-family: "FireEmblem";
+}

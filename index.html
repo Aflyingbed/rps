@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script src="script.js" async></script>
+    <header>
+        <h1>FIRE EMBLEM</h1>
+        <h5>(Rock Paper Scissors-ish)</h5>
+    </header>
+    <main class="container">
+            <div class="scoreboard">
+                <h2 class="score-info">Choose your weapon</h2>
+                <h3 class="score-message">First to 5 points wins</h3>
+                <div class="scores-container">
+                    <div class="score-box">
+                        <img id="playerSelect" src="images/select.png" alt="select">
+                        <div class="score" id="playerScore">Player: 0</div>
+                    </div>
+                    <div class="score-box">
+                        <img id="enemySelect" src="images/select.png" alt="select">
+                        <div class="score" id="enemyScore">Enemy: 0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn weapons-btn"><img class="weapon-img" id="swordBtn" src="images/sword.png" alt="sword"></button>
+                <button class="btn weapons-btn"><img class="weapon-img" id="axeBtn" src="images/axe.png" alt="axe"></button>
+                <button class="btn weapons-btn"><img class="weapon-img" id="lanceBtn" src="images/lance.png" alt="lance"></button>
+            </div>
+    </main>
+    <footer>
+
+    </footer>
+    <div class="modal" id="howtoModal">
+        <div class="modal-content modal-content-big">
+            <span class="close">&times;</span>
+            <p class="modal-title">How to play</p>
+            <img id="howtoImg" src="images/weapon-triangle.png" alt="weapon-triangle" usemap="#triangle-map">
+            <map name="triangle-map" id="triangle-map">
+                <area shape="rect" coords="70,0,275,140" href="#" alt="Sword" data-info="Sword beats Axe">
+                <area shape="rect" coords="172,140,344,313" href="#" alt="Axe" data-info="Axe beats Lance">
+                <area shape="rect" coords="0,140,172,313" href="#" alt="Lance" data-info="Lance beats Sword">
+            </map>
+            <p class="howtoDesc" id="info-box">Hover for details</p>
+        </div>
+    </div>
+    <div class="modal" id="endgameModal">
+        <div class="modal-content modal-content-small">
+            <p class="modal-title" id="endgameMsg"></p>
+            <button class="endBtn btn" id="restartBtn">Another Duel?</button>
+        </div>
+    </div>
 </body>
 </html>

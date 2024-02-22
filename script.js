@@ -1,49 +1,133 @@
 // Generates a random choice
-function getComputerChoice () {
-    const words = ['ROCK', 'PAPER', 'SCISSORS'];
+function getEnemyChoice () {
+    const words = ['SWORD', 'AXE', 'LANCE'];
     const randomIndex = Math.floor(Math.random() * words.length);
-    const computerChoice = words[randomIndex];
-    return computerChoice;
-}
-// Takes two inputs, the random one, and from the Player
-function playRound (playerSelection, computerSelection) {
-    if (!['ROCK', 'PAPER', 'SCISSORS'].includes(playerSelection)) {
-        return "Invalid Selection."
-    }
-
-    if (playerSelection === computerSelection) {
-        return "It's a tie.";
-    } else if (computerSelection === "ROCK" && playerSelection === "SCISSORS" ||
-    computerSelection === "PAPER" && playerSelection === "ROCK" ||
-    computerSelection === "SCISSORS" && playerSelection === "PAPER") {
-        return `You lose! ${computerSelection} beats ${playerSelection}.`;
-    } else {
-        return `You win! ${playerSelection} beats ${computerSelection}.`;
-    }
-}
-// Loops it over 5 times to make a round system
-function playGame () {
-    let playerScore = 0;
-    let computerScore = 0;  
-    for (let i = 1; i <= 5; i++) {
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("ROCK, PAPER, or SCISSORS?");
-        playerSelection = playerSelection.toUpperCase();
-        console.log(playRound(playerSelection, computerSelection));
-        let result = playRound(playerSelection, computerSelection);
-        if (result.includes("win")) {
-            playerScore++;
-        } else if (result.includes("lose")) {;
-            computerScore++;
-        } 
-    }
-    if (playerScore > computerScore) {
-        console.log(`Game Over! You won the game with ${playerScore} points.`)
-    } else if (playerScore < computerScore) {
-        console.log(`Game Over! You lost the game by ${computerScore} points. Better luck next time.`)
-    } else {
-        console.log("Tie!")
-    }
+    const enemyChoice = words[randomIndex];
+    return enemyChoice;
 }
 
-playGame();
+const endgameModal = document.querySelector("#endgameModal");
+const endgameMsg = document.querySelector("#endgameMsg");
+
+function checkPlayerScore(playerScore) {
+    if (playerScore == 5) {
+        endgameModal.style.display = "block";
+        endgameMsg.textContent = "You win";
+        removeButtonSelect();
+    }
+};
+
+function checkEnemyScore(enemyScore) {
+    if (enemyScore == 5) {
+        endgameModal.style.display = "block";
+        endgameMsg.textContent = "You died";
+        removeButtonSelect();
+    }
+};
+
+function removeButtonSelect() {
+    buttons.removeEventListener("click", buttonSelect);
+}
+
+let playerScoreText = document.querySelector("#playerScore");
+let enemyScoreText = document.querySelector("#enemyScore");
+let playerScore = 0;
+let enemyScore = 0;
+let scoreInfo = document.querySelector(".score-info");
+let scoreMessage = document.querySelector(".score-message");
+
+// Takes two inputs, from the Player, and the random one
+function playGame (playerSelection, enemySelection) {
+    if (playerSelection === enemySelection) {
+        scoreInfo.textContent = "It's a tie!";
+        scoreMessage.textContent = `${playerSelection} ties with ${enemySelection}`;
+    } else if (enemySelection === "SWORD" && playerSelection === "LANCE" ||
+    enemySelection === "AXE" && playerSelection === "SWORD" ||
+    enemySelection === "LANCE" && playerSelection === "AXE") {
+        scoreInfo.textContent = "You lost!";
+        scoreMessage.textContent = `${playerSelection} is beaten by ${enemySelection}`;
+        enemyScore++;
+        enemyScoreText.textContent = `Enemy: ${enemyScore}`;
+        checkEnemyScore(enemyScore);
+    } else {
+        scoreInfo.textContent = "You won!";
+        scoreMessage.textContent = `${playerSelection} beats ${enemySelection}`;
+        playerScore++;
+        playerScoreText.textContent = `Player: ${playerScore}`;
+        checkPlayerScore(playerScore);
+    }
+};
+
+const buttons = document.querySelector(".buttons");
+
+buttons.addEventListener ("click", (event) => {
+    let target = event.target;
+    let playerSelection, enemySelection;
+    switch(target.id) {
+        case 'swordBtn':
+            playerSelection = "SWORD";
+            enemySelection = getEnemyChoice();
+            playGame(playerSelection, enemySelection);
+            break;
+        case 'axeBtn':
+            playerSelection = "AXE";
+            enemySelection = getEnemyChoice();
+            playGame(playerSelection, enemySelection);
+            break;
+        case 'lanceBtn':
+            playerSelection = "LANCE";
+            enemySelection = getEnemyChoice();
+            playGame(playerSelection, enemySelection);
+            break;
+    }
+});
+
+const howtoModal = document.querySelector("#howtoModal");
+const closeBtn = document.querySelector(".close");
+
+window.addEventListener("load", () => {
+    howtoModal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+    howtoModal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    if ((event.target == howtoModal)) {
+        howtoModal.style.display = "none";
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const areas = document.querySelectorAll('map[name="triangle-map"] area');
+    const infoBox = document.querySelector("#info-box");
+
+    areas.forEach((area) => {
+        area.addEventListener("mouseover", () => {
+            const info = area.dataset.info;
+            infoBox.textContent = info;
+        });
+
+        area.addEventListener("mouseout", () => {
+            infoBox.textContent = "Hover for details"
+        });
+    });
+});
+
+const originalScoreInfo = document.querySelector(".score-info").textContent;
+const originalScoreMessage = document.querySelector(".score-message").textContent;
+
+const endBtn = document.querySelector("#restartBtn");
+endBtn.addEventListener("click", () => {
+    playerScore = 0;
+    enemyScore = 0;
+    playerScoreText.textContent = `Player: ${playerScore}`;
+    enemyScoreText.textContent = `Enemy: ${enemyScore}`;
+    document.querySelector(".score-info").textContent = originalScoreInfo;
+    document.querySelector(".score-message").textContent = originalScoreMessage;
+    endgameModal.style.display = "none";
+    buttons.addEventListener('click', buttonSelect);    
+});
+
+/* Add bg; Add music; Add colors and better layout; Add sfx; */
