@@ -6,28 +6,52 @@ function getEnemyChoice () {
     return enemyChoice;
 }
 
+function getRandomSfx (randomSfx) {
+    const victorySfx = [
+        'sfx/victory-sfx-1.mp3',
+        'sfx/victory-sfx-2.mp3',
+        'sfx/victory-sfx-3.mp3',
+    ];
+
+    const defeatSfx = [
+        'sfx/defeat-sfx-1.mp3',
+        'sfx/defeat-sfx-2.mp3',
+        'sfx/defeat-sfx-3.mp3',
+    ];
+    const sfx = (randomSfx === 'victory') ? victorySfx : defeatSfx;
+    const randomIndex = Math.floor(Math.random() * sfx.length);
+    return sfx[randomIndex];
+}
+
 const endgameModal = document.querySelector("#endgameModal");
 const endgameMsg = document.querySelector("#endgameMsg");
+
 
 function checkPlayerScore(playerScore) {
     if (playerScore == 5) {
         endgameModal.style.display = "block";
         endgameMsg.textContent = "You win";
-        removeButtonSelect();
+
+        const victorySfx = document.createElement("audio");
+        victorySfx.src = getRandomSfx("victory");
+        victorySfx.autoplay = true;
+
+        endgameModal.appendChild(victorySfx);
     }
 };
+
 
 function checkEnemyScore(enemyScore) {
     if (enemyScore == 5) {
         endgameModal.style.display = "block";
         endgameMsg.textContent = "You died";
-        removeButtonSelect();
+        const defeatSfx = document.createElement("audio");
+        defeatSfx.src = getRandomSfx("defeat");
+        defeatSfx.autoplay = true;
+
+        endgameModal.appendChild(defeatSfx);
     }
 };
-
-function removeButtonSelect() {
-    buttons.removeEventListener("click", buttonSelect);
-}
 
 let playerScoreText = document.querySelector("#playerScore");
 let enemyScoreText = document.querySelector("#enemyScore");
@@ -153,7 +177,6 @@ endBtn.addEventListener("click", () => {
     document.querySelector(".score-info").textContent = originalScoreInfo;
     document.querySelector(".score-message").textContent = originalScoreMessage;
     endgameModal.style.display = "none";
-    buttons.addEventListener('click', buttonSelect);    
 });
 
 /* Add bg; Add music; Add colors and better layout; Add sfx; */
