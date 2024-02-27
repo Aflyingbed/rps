@@ -41,9 +41,9 @@ function playGame (playerSelection, enemySelection) {
     if (playerSelection === enemySelection) {
         scoreInfo.textContent = "It's a tie!";
         scoreMessage.textContent = `${playerSelection} ties with ${enemySelection}`;
-    } else if (enemySelection === "SWORD" && playerSelection === "LANCE" ||
-    enemySelection === "AXE" && playerSelection === "SWORD" ||
-    enemySelection === "LANCE" && playerSelection === "AXE") {
+    } else if (enemySelection === "LANCE" && playerSelection === "SWORD" ||
+    enemySelection === "SWORD" && playerSelection === "AXE" ||
+    enemySelection === "AXE" && playerSelection === "LANCE") {
         scoreInfo.textContent = "You lose the round!";
         scoreMessage.textContent = `${playerSelection} is beaten by ${enemySelection}`;
         enemyScore++;
