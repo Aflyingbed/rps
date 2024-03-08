@@ -25,17 +25,17 @@
 
 @font-face {
   font-family: "DarkSouls";
-  src: url(./fonts/DarkSouls.ttf);
+  src: url(fonts/darksouls.ttf);
 }
 
 @font-face {
   font-family: "FireEmblem";
-  src: url(./fonts/FireEmblem.ttf);
+  src: url(fonts/FireEmblem.ttf);
 }
 
 @font-face {
   font-family: "Plantin";
-  src: url(./fonts/Plantin.otf);
+  src: url(fonts/Plantin.otf);
 }
 
 ::-webkit-scrollbar {
