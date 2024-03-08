@@ -386,7 +386,7 @@ footer {
     }
     .weapon-buttons {
         margin-top: -2rem;
-        transform: scale(0.7);
+        transform: scale(0.9);
     }
     .chooser {
         transform: scale(2.5);
