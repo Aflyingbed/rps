@@ -394,6 +394,9 @@ footer {
     .modal-content {
         transform: scale(0.8);
     }
+      .modal-content-small {
+      margin: 40% auto;
+    }
 }
 
 
@@ -429,5 +432,8 @@ footer {
     }
     .modal-content {
         transform: scale(0.8);
+    }
+      .modal-content-small {
+      margin: 40% auto;
     }
 }
