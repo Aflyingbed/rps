@@ -23,6 +23,26 @@ function getRandomSfx (randomSfx) {
     return sfx[randomIndex];
 }
 
+const bgMusic = document.querySelector("#bgMusic");
+bgMusic.volume = 0.1;
+
+const originalBgVolume = bgMusic.volume;
+
+function reduceBgMusicVolume() {
+    bgMusic.volume = originalBgVolume * 0.5;
+}
+
+function restoreBgMusicVolume() {
+    bgMusic.volume = originalBgVolume;
+}
+
+const soundEffects = document.querySelectorAll(".sfx");
+
+soundEffects.forEach((soundEffect) => {
+    soundEffect.addEventListener('play', reduceBgMusicVolume);
+    soundEffect.addEventListener('ended', restoreBgMusicVolume);
+})
+
 const endgameModal = document.querySelector("#endgameModal");
 const endgameMsg = document.querySelector("#endgameMsg");
 
@@ -62,6 +82,7 @@ let enemyScore = 0;
 let scoreInfo = document.querySelector(".score-info");
 let scoreMessage = document.querySelector(".score-message");
 let roundSfx = document.querySelector("#roundSfx");
+roundSfx.volume = 0.05;
 roundSfx.autoplay = true;
 
 // Takes two inputs, from the Player, and the random one
@@ -101,7 +122,7 @@ function playGame (playerSelection, enemySelection) {
     }
 };
 
-const buttons = document.querySelector(".buttons");
+const weaponButtons = document.querySelector(".weapon-buttons");
 
 const playerWeapon = document.querySelector("#playerWeapon");
 const enemyWeapon = document.querySelector("#enemyWeapon");
@@ -126,7 +147,7 @@ function setPlayerWeaponImage(imageName) {
     playerWeapon.setAttribute("src", `images/${imageName}.png`);
 };
 
-buttons.addEventListener ("click", (event) => {
+weaponButtons.addEventListener ("click", (event) => {
     let target = event.target;
     let playerSelection, enemySelection;
     switch(target.id) {
@@ -184,13 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 const originalScoreInfo = document.querySelector(".score-info").textContent;
 const originalScoreMessage = document.querySelector(".score-message").textContent;
-const audioFiles = document.querySelectorAll("audio");
-
-audioFiles.forEach((audio) => {
-    audio.volume = 0.5; 
- });
 
 function stopMainSfx() {
     victorySfx.currentTime = defeatSfx.currentTime = 0;
@@ -208,7 +225,126 @@ endBtn.addEventListener("click", () => {
     document.querySelector(".score-info").textContent = originalScoreInfo;
     document.querySelector(".score-message").textContent = originalScoreMessage;
     endgameModal.style.display = "none";
+    setPlayerWeaponImage("select"), setEnemyWeaponImage("select");
     stopMainSfx();
 });
 
-/* Add bg; Add music; Add colors and better layout; Add sfx; */
+const banners = document.querySelectorAll(".banners");
+const themeChooser = document.querySelector("#themeChooser");
+
+function changeBanner(bannerColor) {
+    banners.forEach((banner) => {
+        banner.setAttribute("src", `images/${bannerColor}-banner.png`);
+    });
+}
+
+const modals = document.querySelectorAll(".modal-content");
+
+function changeModalColor(borderColor, backgroundColor) {
+    modals.forEach((modal) => {
+        modal.style.borderColor = borderColor;
+        modal.style.backgroundColor = backgroundColor;
+    });
+}
+
+themeChooser.addEventListener("click", (event) => {
+    let target = event.target;
+    
+    let header = document.querySelector("header");
+    let body = document.querySelector("body");
+
+    const blueFirst = getComputedStyle(document.body).getPropertyValue('--blue-first');
+    const blueSecond = getComputedStyle(document.body).getPropertyValue('--blue-second');
+    const redFirst = getComputedStyle(document.body).getPropertyValue('--red-first');
+    const redSecond = getComputedStyle(document.body).getPropertyValue('--red-second');
+    const yellowFirst = getComputedStyle(document.body).getPropertyValue('--yellow-first');
+    const yellowSecond = getComputedStyle(document.body).getPropertyValue('--yellow-second');
+
+    const blueHeaderBottom = getComputedStyle(document.body).getPropertyValue('--blue-header-bottom');
+    const redHeaderBottom = getComputedStyle(document.body).getPropertyValue('--red-header-bottom');
+    const yellowHeaderBottom = getComputedStyle(document.body).getPropertyValue('--yellow-header-bottom');
+
+    const root = document.documentElement;
+
+    const modalBlue = getComputedStyle(document.body).getPropertyValue('--modal-blue');
+    const modalRed = getComputedStyle(document.body).getPropertyValue('--modal-red');
+    const modalYellow = getComputedStyle(document.body).getPropertyValue('--modal-yellow');
+    const blueThemeBtn = document.querySelector("#blueThemeBtn");
+    const redThemeBtn = document.querySelector("#redThemeBtn");
+    const yellowThemeBtn = document.querySelector("#yellowThemeBtn");
+
+    switch(target.id) {
+        case "blueThemeBtn":
+            addInsetAndRemoveOthers(blueThemeBtn, [redThemeBtn, yellowThemeBtn])
+            changeBanner("blue");
+            header.style.backgroundColor = blueFirst;
+            body.style.backgroundColor = blueSecond;
+            header.style.borderBottomColor = blueHeaderBottom;
+            changeModalColor(blueFirst, modalBlue);
+            root.style.setProperty("--scrollbar-thumb-color", "#191970");
+            playerScoreText.style.color = blueSecond;
+            enemyScoreText.style.color = blueSecond;
+            break;
+        case "redThemeBtn":
+            addInsetAndRemoveOthers(redThemeBtn, [blueThemeBtn, yellowThemeBtn])
+            changeBanner("red")
+            header.style.backgroundColor = redFirst;
+            body.style.backgroundColor = redSecond;
+            header.style.borderBottomColor = redHeaderBottom;
+            changeModalColor(redFirst, modalRed);
+            root.style.setProperty("--scrollbar-thumb-color", "#701919");
+            playerScoreText.style.color = redSecond;
+            enemyScoreText.style.color = redSecond;
+            break;
+        case "yellowThemeBtn":
+            addInsetAndRemoveOthers(yellowThemeBtn, [redThemeBtn, blueThemeBtn])
+            changeBanner("yellow")
+            header.style.backgroundColor = yellowFirst;
+            body.style.backgroundColor = yellowSecond;
+            header.style.borderBottomColor = yellowHeaderBottom;
+            changeModalColor(yellowFirst, modalYellow);
+            root.style.setProperty("--scrollbar-thumb-color", "#A59719");
+            playerScoreText.style.color = yellowSecond;
+            enemyScoreText.style.color = yellowSecond;
+            break;
+    }
+});
+
+const bgmChooser = document.querySelector("#bgmChooser");
+
+function changeBgm(bgm) {
+    bgMusic.setAttribute("src", `sfx/${bgm}.mp3`);
+}
+
+let promiseBtn = document.querySelector("#promiseBtn")
+let spiderwebsBtn = document.querySelector("#spiderwebsBtn")
+let breezeBtn = document.querySelector("#breezeBtn")
+
+function addFadeAndRemoveOthers(targetBtn, otherBtns) {
+    targetBtn.classList.add('fa-fade');
+    otherBtns.forEach(btn => btn.classList.remove('fa-fade'));
+}
+
+function addInsetAndRemoveOthers(targetBtn, otherBtns) {
+    targetBtn.classList.add('theme-btn-active');
+    otherBtns.forEach(btn => btn.classList.remove('theme-btn-active'));
+}
+
+bgmChooser.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case "promiseBtn":
+            changeBgm("promise");
+            addFadeAndRemoveOthers(promiseBtn, [spiderwebsBtn, breezeBtn]);
+            break;
+        case "spiderwebsBtn":
+            changeBgm("spiderwebs");
+            addFadeAndRemoveOthers(spiderwebsBtn, [promiseBtn, breezeBtn]);
+            break;
+        case "breezeBtn":
+            changeBgm("a-gentle-breeze");
+            addFadeAndRemoveOthers(breezeBtn, [promiseBtn, spiderwebsBtn]);
+            break;
+    }    
+})

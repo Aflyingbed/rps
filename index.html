@@ -1,63 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/625519a4d9.js" crossorigin="anonymous"></script>
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <header>
-        <img class="logo" src="images/logo.png" alt="logo">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img class="banner-left banners" src="images/blue-banner.png" alt="banner-blue" width="100px">
+        <img class="logo" src="images/logo.png" alt="logo" />
         <h5>(Rock Paper Scissors-ish)</h5>
-    </header>
-    <main class="container">
-            <div class="scoreboard">
-                <h2 class="score-info">Select your weapon</h2>
-                <h3 class="score-message">First to 5 points wins</h3>
-                <div class="scores-container">
-                    <div class="score-box">
-                        <img id="playerWeapon" src="images/select.png" alt="select">
-                        <div class="score" id="playerScore">Player: 0</div>
-                    </div>
-                    <img class="versus" src="images/vs.png" alt="versus">
-                    <div class="score-box">
-                        <img id="enemyWeapon" src="images/select.png" alt="select">
-                        <div class="score" id="enemyScore">Enemy: 0</div>
-                    </div>
-                </div>
+        <img class="banner-right banners" src="images/blue-banner.png" alt="banner-blue" width="100px">
+      </header>
+      <main>
+        <div class="scoreboard">
+          <h2 class="score-info">Select your weapon</h2>
+          <h3 class="score-message">First to 5 points wins</h3>
+          <div class="scores-container">
+            <div class="score-box">
+              <img id="playerWeapon" src="images/select.png" alt="select" />
+              <div class="score" id="playerScore">Player: 0</div>
             </div>
-            <div class="buttons">
-                <button class="btn weapons-btn"><img class="weapon-img" id="swordBtn" src="images/sword.png" alt="sword"></button>
-                <button class="btn weapons-btn"><img class="weapon-img" id="axeBtn" src="images/axe.png" alt="axe"></button>
-                <button class="btn weapons-btn"><img class="weapon-img" id="lanceBtn" src="images/lance.png" alt="lance"></button>
+            <img class="versus" src="images/vs.png" alt="versus" />
+            <div class="score-box">
+              <img id="enemyWeapon" src="images/select.png" alt="select" />
+              <div class="score" id="enemyScore">Enemy: 0</div>
             </div>
-    </main>
-    <footer>
-
-    </footer>
-    <div class="modal" id="howtoModal">
-        <div class="modal-content modal-content-big">
-            <span class="close">&times;</span>
-            <p class="modal-title">How to play</p>
-            <img id="howtoImg" src="images/weapon-triangle.png" alt="weapon-triangle" usemap="#triangle-map">
-            <map name="triangle-map" id="triangle-map">
-                <area shape="rect" coords="70,0,275,140" href="#" alt="Sword" data-info="Sword beats Axe">
-                <area shape="rect" coords="172,140,344,313" href="#" alt="Axe" data-info="Axe beats Lance">
-                <area shape="rect" coords="0,140,172,313" href="#" alt="Lance" data-info="Lance beats Sword">
-            </map>
-            <p class="howtoDesc" id="info-box">Hover for details</p>
+          </div>
         </div>
+        <div class="weapon-buttons">
+          <button class="btn weapons-btn">
+            <img
+              class="weapon-img"
+              id="swordBtn"
+              src="images/sword.png"
+              alt="sword"
+            />
+          </button>
+          <button class="btn weapons-btn">
+            <img
+              class="weapon-img"
+              id="axeBtn"
+              src="images/axe.png"
+              alt="axe"
+            />
+          </button>
+          <button class="btn weapons-btn">
+            <img
+              class="weapon-img"
+              id="lanceBtn"
+              src="images/lance.png"
+              alt="lance"
+            />
+          </button>
+        </div>
+      </main>
+      <footer>
+        <span>Created by Aflyingbed<a href="https://github.com/Aflyingbed " target="_blank"><i class="github fa-brands fa-github-alt" style="color: #dddddd;"></i></a></span>
+      </footer>
+    </div>
+    <div class="modal" id="howtoModal">
+      <div class="modal-content modal-content-big">
+        <span class="close">&times;</span>
+        <p class="modal-title">How to play</p>
+        <img
+          id="howtoImg"
+          src="images/weapon-triangle.png"
+          alt="weapon-triangle"
+          usemap="#triangle-map"
+        />
+        <map name="triangle-map" id="triangle-map">
+          <area
+            shape="rect"
+            coords="70,0,275,140"
+            href="#"
+            alt="Sword"
+            data-info="Sword beats Axe"
+          />
+          <area
+            shape="rect"
+            coords="172,140,344,313"
+            href="#"
+            alt="Axe"
+            data-info="Axe beats Lance"
+          />
+          <area
+            shape="rect"
+            coords="0,140,172,313"
+            href="#"
+            alt="Lance"
+            data-info="Lance beats Sword"
+          />
+        </map>
+        <p class="howtoDesc" id="info-box">Hover for details</p>
+      </div>
     </div>
     <div class="modal" id="endgameModal">
-        <div class="modal-content modal-content-small">
-            <p class="modal-title" id="endgameMsg"></p>
-            <button class="endBtn btn" id="restartBtn">Another Duel?</button>
-        </div>
+      <div class="modal-content modal-content-small">
+        <p class="modal-title" id="endgameMsg"></p>
+        <button class="endBtn btn" id="restartBtn">Another Duel?</button>
+      </div>
     </div>
-    <audio id="victorySfx" src=""></audio>
-    <audio id="defeatSfx" src=""></audio>
-    <audio id="roundSfx" src=""></audio>
-</body>
+    <div class="theme-chooser chooser" id="themeChooser">
+      <button class="theme-btns theme-btn-blue theme-btn-active" id="blueThemeBtn"></button>
+      <button class="theme-btns theme-btn-red" id="redThemeBtn"></button>
+      <button class="theme-btns theme-btn-yellow" id="yellowThemeBtn"></button>
+    </div>
+    <div class="bgm-chooser chooser" id="bgmChooser">
+      <button class="bgm-btns promise-btn"><i class="music fa-solid fa-music fa-fade" id="promiseBtn" style="color: #4169e1;"></i></button>
+      <button class="bgm-btns spiderwebs-btn"><i class="music fa-solid fa-music" id="spiderwebsBtn" style="color: #ff6666;"></i></button>
+      <button class="bgm-btns breeze-btn"><i class="music fa-solid fa-music" id="breezeBtn" style="color: #ffcc33;"></i></button>
+    </div>
+    <audio class="sfx" id="victorySfx" src=""></audio>
+    <audio class="sfx" id="defeatSfx" src=""></audio>
+    <audio class="sfx" id="roundSfx" src=""></audio>
+    <audio id="bgMusic" src="sfx/promise.mp3" autoplay loop></audio>
+  </body>
 </html>
