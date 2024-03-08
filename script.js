@@ -58,6 +58,7 @@ function checkPlayerScore(playerScore) {
     stopRoundSfx();
     victorySfx = document.querySelector("#victorySfx");
     victorySfx.src = getRandomSfx("victory");
+    victorySfx.volume = 0.1;
     victorySfx.autoplay = true;
   }
 }
@@ -69,6 +70,7 @@ function checkEnemyScore(enemyScore) {
     stopRoundSfx();
     defeatSfx = document.querySelector("#defeatSfx");
     defeatSfx.src = getRandomSfx("defeat");
+    defeatSfx.volume = 0.1;
     defeatSfx.autoplay = true;
   }
 }
