@@ -25,17 +25,17 @@
 
 @font-face {
   font-family: "DarkSouls";
-  src: url(fonts/darkSouls.ttf);
+  src: url(./fonts/DarkSouls.ttf);
 }
 
 @font-face {
   font-family: "FireEmblem";
-  src: url(fonts/fireEmblem.ttf);
+  src: url(./fonts/FireEmblem.ttf);
 }
 
 @font-face {
   font-family: "Plantin";
-  src: url(fonts/plantin.otf);
+  src: url(./fonts/Plantin.otf);
 }
 
 ::-webkit-scrollbar {
@@ -386,13 +386,19 @@ footer {
     }
     .weapon-buttons {
         margin-top: -2rem;
-        transform: scale(0.7);
+        transform: scale(0.9);
     }
     .chooser {
         transform: scale(2.5);
     }
     .modal-content {
         transform: scale(0.8);
+    }
+    .modal-content-big {
+      margin: 10% auto;
+    }
+    .modal-content-small {
+      margin: 40% auto;
     }
 }
 
@@ -429,5 +435,11 @@ footer {
     }
     .modal-content {
         transform: scale(0.8);
+    }
+    .modal-content-big {
+      margin: 10% auto;
+    }
+    .modal-content-small {
+      margin: 40% auto;
     }
 }
