@@ -1,41 +1,41 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --blue-first: #4169e1;
-    --blue-second: #333366;
-    --red-first: #ff6666;
-    --red-second: #cc3333;
-    --yellow-first:#ffcc33;
-    --yellow-second: #cca300;
-    --crimson-red: #dc143c;
-    --white: #DDDDDD;
-    --black: #000000;
-    --blue-header-bottom: #95b4b6;
-    --red-header-bottom: #DE6F6C;
-    --yellow-header-bottom: #DEC04B;
-    --modal-blue: #2b4c7c;
-    --modal-red: #7c2b2b;
-    --modal-yellow: #7c6d2b;
-    --scrollbar-thumb-color: #191970;
-}  
-
-@font-face {
-    font-family: "DarkSouls";
-    src: url(fonts/DarkSouls.ttf);
+  --blue-first: #4169e1;
+  --blue-second: #333366;
+  --red-first: #ff6666;
+  --red-second: #cc3333;
+  --yellow-first: #ffcc33;
+  --yellow-second: #cca300;
+  --crimson-red: #dc143c;
+  --white: #dddddd;
+  --black: #000000;
+  --blue-header-bottom: #95b4b6;
+  --red-header-bottom: #de6f6c;
+  --yellow-header-bottom: #dec04b;
+  --modal-blue: #2b4c7c;
+  --modal-red: #7c2b2b;
+  --modal-yellow: #7c6d2b;
+  --scrollbar-thumb-color: #191970;
 }
 
 @font-face {
-    font-family: "FireEmblem";
-    src: url(/Fonts/FireEmblem.ttf);
+  font-family: "DarkSouls";
+  src: url(fonts/DarkSouls.ttf);
 }
 
 @font-face {
-    font-family: "Plantin";
-    src: url(fonts/Plantin.otf);
+  font-family: "FireEmblem";
+  src: url(/Fonts/FireEmblem.ttf);
+}
+
+@font-face {
+  font-family: "Plantin";
+  src: url(fonts/Plantin.otf);
 }
 
 ::-webkit-scrollbar {
@@ -48,120 +48,118 @@
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: var(--blue-first);
-    color: var(--black);
-    width: 100%;
-    margin-bottom: 4rem;
-    border-bottom: ridge;
-    border-bottom-color: var(--blue-header-bottom);
-    transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--blue-first);
+  color: var(--black);
+  width: 100%;
+  margin-bottom: 4rem;
+  border-bottom: ridge;
+  border-bottom-color: var(--blue-header-bottom);
+  transition: background-color 0.3s ease;
 }
 
 .logo {
-    width: 33rem;
+  width: 33rem;
 }
 
 h5 {
-    font-size: 1.2rem;
-    margin: -2.5rem 0 0 0;
+  font-size: 1.2rem;
+  margin: -2.5rem 0 0 0;
 }
 
 body {
-    font-family: "FireEmblem";
-    background-color: var(--blue-second);
-    color: var(--white);
-    transition: background-color 0.3s ease;
+  font-family: "FireEmblem";
+  background-color: var(--blue-second);
+  color: var(--white);
+  transition: background-color 0.3s ease;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .scoreboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: x-large;
-    text-shadow: 0 0 5px var(--black);
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+  text-shadow: 0 0 5px var(--black);
+  width: 100%;
 }
 
 .score {
-    background-image: url(images/box3.png);
-    background-size: 100% 100%;
-    padding: 5px 15px;
-    border-radius: 1rem;
+  background-image: url(images/box3.png);
+  background-size: 100% 100%;
+  padding: 5px 15px;
+  border-radius: 1rem;
 }
 
 .score {
-    font-family: "Plantin";
-    color: var(--blue-second);
+  font-family: "Plantin";
+  color: var(--blue-second);
 }
 
 .score-info,
 .score-message {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .scores-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin: 3.5rem auto;
-    width: 50rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 3.5rem auto;
+  width: 50rem;
 }
 
 .weapon-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 5rem;
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    max-width: 33%;
-    background-color: var(--modal-blue);
-    text-shadow: 2px 2px 10px var(--black);
-    border-radius: 0.4rem;
-    border-style: outset;
-    border-color: var(--blue-first);
-    border-width: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 33%;
+  background-color: var(--modal-blue);
+  text-shadow: 2px 2px 10px var(--black);
+  border-radius: 0.4rem;
+  border-style: outset;
+  border-color: var(--blue-first);
+  border-width: 0.4rem;
 }
 
 .modal-content-small {
-    display: flex;
-    flex-direction: column;
-    margin: 12% auto;
-    width: 25%;
-    max-width: 300px;
-    padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 15% auto;
+  max-width: 300px;
+  padding: 2.5rem;
 }
 
 .close {
@@ -173,231 +171,263 @@ body {
 }
 
 .close:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .howtoDesc {
-    font-size: x-large;
+  font-size: x-large;
 }
 
 .modal-content-big {
-    position: relative;
-    max-width: 33vw;
-    margin: 3.3% auto;
+  position: relative;
+  max-width: 40rem;
+  margin: 3.3% auto;
 }
 
 .modal-content-big > img {
-    margin-bottom: 1rem;
-    width: 100%;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .modal-title {
-    font-size: 4.5rem;
-    font-family: 'DarkSouls';
+  font-size: 4.5rem;
+  font-family: "DarkSouls";
 }
 
 .weapons-btn {
-    width: 12rem;
-    height: 12rem;
-    background-image: url(images/button-bg-1.png);
-    background-size: 100% 100%;
-    transition: background-image 0.3s ease-in-out;
-    border: none;
-    cursor: pointer;
+  width: 12rem;
+  height: 12rem;
+  background-image: url(images/button-bg-1.png);
+  background-size: 100% 100%;
+  transition: background-image 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
 }
 
 .weapon-img {
-    transform: scale(0.93);
-    transition: transform 0.2s ease-out;
+  transform: scale(0.93);
+  transition: transform 0.2s ease-out;
+  width: 60%;
 }
 
 .weapons-btn:hover {
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-    background-image: url(images/button-bg-2.png);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  background-image: url(images/button-bg-2.png);
 }
 
-
 .weapons-btn:hover .weapon-img {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .btn {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .endBtn {
-    background-color: var(--crimson-red);
-    transition: background-color 0.4s ease;
-    font-size: 3rem;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    font-family: "FireEmblem";
-    margin-top: 1.5rem;
-    box-shadow: 2px 2px 5px red;
-    border: none;
+  background-color: var(--crimson-red);
+  transition: background-color 0.4s ease;
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-family: "FireEmblem";
+  margin-top: 1.5rem;
+  box-shadow: 2px 2px 5px red;
+  border: none;
 }
 
 .endBtn:hover {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .versus {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 7rem;
-} 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7rem;
+}
 
 footer {
-    font-size: large;
-    font-family: 'Roboto', sans-serif;
-    font-style: oblique;
-    padding: 5px 0;
-    margin: 4rem 0 0.5rem 0;
+  font-size: large;
+  font-family: "Roboto", sans-serif;
+  font-style: oblique;
+  padding: 5px 0;
+  margin: 4rem 0 0.5rem 0;
 }
 
 .banner-left {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .banner-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
 }
 
 .github {
-    margin-left: 8px;
-    transition: transform 0.4s ease;
+  margin-left: 8px;
+  transition: transform 0.4s ease;
 }
 
 .github:hover {
-    transform: scale(1.2) rotate(360deg);
+  transform: scale(1.2) rotate(360deg);
 }
 
 .chooser {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url(images/chooser-bg.png);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(images/chooser-bg.png);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .bgm-chooser {
-    left: 0;
-    padding: 0.7vw;
-    border-radius: 0 25% 25% 0;
+  left: 0;
+  padding: 0.7vw;
+  border-radius: 0 25% 25% 0;
 }
 
 .bgm-btns {
-    background-image: url(images//chooser-bg.png);
-    margin-left: -0.3vw;
-    margin-right: -0.3vw;
-    position: relative;
+  background-image: url(images//chooser-bg.png);
+  margin-right: -0.3vw;
+  position: relative;
 }
 
 .music {
-    font-size: 1vw;
-    position: absolute;
-    transform: translate(-50%, -50%);
+  font-size: 1vw;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .theme-chooser {
-    right: 0;
-    padding: 0.5vw 0 0.5vw 0.35vw;
-    border-radius: 25% 0 0 25%;
+  right: 0;
+  padding: 0.5vw 0 0.5vw 0.35vw;
+  border-radius: 25% 0 0 25%;
 }
 
-.theme-btns
-,.bgm-btns {
-    height: 1vw;
-    width: 2vw;
-    border-radius: 50% 0 0 50%;
-    cursor: pointer;
-    border: none;
+.theme-btns,
+.bgm-btns {
+  height: 1vw;
+  width: 2vw;
+  border-radius: 50% 0 0 50%;
+  cursor: pointer;
+  border: none;
 }
 
 .theme-btn-active {
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .theme-btns:not(:last-child),
 .bgm-btns:not(:last-child) {
-    margin-bottom: 20%;
+  margin-bottom: 20%;
 }
 
 .theme-btn-blue {
-    background-image: linear-gradient(to right, var(--blue-first), var(--blue-second));
+  background-image: linear-gradient(
+    to right,
+    var(--blue-first),
+    var(--blue-second)
+  );
 }
 
 .theme-btn-red {
-    background-image: linear-gradient(to right, var(--red-first), var(--red-second));
+  background-image: linear-gradient(
+    to right,
+    var(--red-first),
+    var(--red-second)
+  );
 }
 
 .theme-btn-yellow {
-    background-image: linear-gradient(to right, var(--yellow-first), var(--yellow-second));
+  background-image: linear-gradient(
+    to right,
+    var(--yellow-first),
+    var(--yellow-second)
+  );
 }
 
-.theme-btns::after,
-.bgm-btns::after {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 4px;
-    font-size: 1rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+@media screen and (max-width: 320px) {
+    main {
+        max-width: 100%;
+    }
+    .logo-container {
+        transform: scale(0.7);
+    }
+    header {
+        padding-top: 5px;
+        height: 65px;
+    }
+    .banners {
+        display: none;
+    }
+    .scoreboard {
+        transform: scale(0.8);
+    }
+    .scores-container {
+        max-width: 320px;
+        transform: scale(0.9);
+    }
+    .versus {
+        width: 35px;
+    }
+    .weapons-btn {
+        height: 100px;
+        transform: scale(0.9);
+    }
+    .weapon-buttons {
+        margin-top: -2rem;
+        transform: scale(0.7);
+    }
+    .chooser {
+        transform: scale(2.5);
+    }
+    .modal-content {
+        transform: scale(0.8);
+    }
 }
 
-.theme-btns::after {
-    bottom: 100%;
-}
 
-.bgm-btns::after {
-    bottom: 100%;
-    margin-left: 1rem;
-}
 
-.theme-btn-blue::after {
-    content: "Navy";
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    main {
+        max-width: 100%;
+    }
+    .logo-container {
+        transform: scale(0.8);
+    }
+    header {
+        height: 90px;
+    }
+    .banners {
+        display: none;
+    }
+    .scores-container {
+        max-width: 380px;
+        transform: scale(0.9);
+    }
+    .versus {
+        width: 50px;
+    }
+    .weapons-btn {
+        transform: scale(0.9);
+    }
+    .weapon-buttons {
+        max-width: 400px;
+    }
+    .chooser {
+        transform: scale(2.5);
+    }
+    .modal-content {
+        transform: scale(0.8);
+    }
 }
-
-.theme-btn-red::after {
-    content: "Crimson";
-}
-
-.theme-btn-yellow::after {
-    content: "Lime";
-}
-
-.theme-btns:hover::after,
-.bgm-btns:hover::after {    
-    opacity: 1;
-}
-
-.promise-btn::after {
-    content: "Promise";
-}
-
-.spiderwebs-btn::after {
-    content: "Spiderwebs";
-}
-
-.breeze-btn::after {
-    content: "Gentle Breeze";
-}
-
-/*
-Add bg image to score, maybe change the font?
-*/
