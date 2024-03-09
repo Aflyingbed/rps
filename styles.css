@@ -372,7 +372,6 @@ footer {
   }
   .scores-container {
     max-width: 320px;
-    transform: scale(0.9);
   }
   .versus {
     width: 35px;
@@ -413,7 +412,7 @@ footer {
     display: none;
   }
   .scores-container {
-    max-width: 380px;
+    max-width: 90vw;
     transform: scale(0.9);
   }
   .versus {
@@ -439,11 +438,17 @@ footer {
   }
 }
 
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 620px) {
   main {
     max-width: 100%;
   }
   .banners {
     display: none;
+  }
+  .scores-container {
+    max-width: 90vw;
+  }
+  .chooser {
+    transform: scale(2);
   }
 }
