@@ -183,13 +183,13 @@ window.addEventListener("load", () => {
 
 closeBtn.addEventListener("click", () => {
   howtoModal.style.display = "none";
-  changeBgm("promise");
+  bgMusic.play();
 });
 
 window.addEventListener("click", (event) => {
   if (event.target == howtoModal) {
     howtoModal.style.display = "none";
-    changeBgm("promise");
+    bgMusic.play();
   }
 });
 
