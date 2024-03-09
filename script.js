@@ -24,7 +24,7 @@ function getRandomSfx(randomSfx) {
 }
 
 const bgMusic = document.querySelector("#bgMusic");
-bgMusic.volume = 0.1;
+bgMusic.volume = 0.2;
 
 const originalBgVolume = bgMusic.volume;
 
@@ -183,11 +183,13 @@ window.addEventListener("load", () => {
 
 closeBtn.addEventListener("click", () => {
   howtoModal.style.display = "none";
+  bgMusic.play();
 });
 
 window.addEventListener("click", (event) => {
   if (event.target == howtoModal) {
     howtoModal.style.display = "none";
+    bgMusic.play();
   }
 });
 
