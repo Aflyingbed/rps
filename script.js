@@ -29,7 +29,7 @@ bgMusic.volume = 0.2;
 const originalBgVolume = bgMusic.volume;
 
 function reduceBgMusicVolume() {
-  bgMusic.volume = originalBgVolume * 0.5;
+  bgMusic.volume = originalBgVolume * 0.3;
 }
 
 function restoreBgMusicVolume() {
