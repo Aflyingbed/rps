@@ -438,3 +438,12 @@ footer {
     margin: 40% auto;
   }
 }
+
+@media screen and (min-width: 425px) and (max-width: 720px) {
+  main {
+    max-width: 100%;
+  }
+  .banners {
+    display: none;
+  }
+}
