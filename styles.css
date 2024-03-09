@@ -439,7 +439,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (min-width: 425px) and (max-width: 1024px) {
   main {
     max-width: 100%;
   }
