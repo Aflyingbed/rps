@@ -102,9 +102,6 @@ body {
   background-size: 100% 100%;
   padding: 5px 15px;
   border-radius: 1rem;
-}
-
-.score {
   font-family: "Plantin";
   color: var(--blue-second);
 }
@@ -357,89 +354,87 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
-    main {
-        max-width: 100%;
-    }
-    .logo-container {
-        transform: scale(0.7);
-    }
-    header {
-        padding-top: 5px;
-        height: 65px;
-    }
-    .banners {
-        display: none;
-    }
-    .scoreboard {
-        transform: scale(0.8);
-    }
-    .scores-container {
-        max-width: 320px;
-        transform: scale(0.9);
-    }
-    .versus {
-        width: 35px;
-    }
-    .weapons-btn {
-        height: 100px;
-        transform: scale(0.9);
-    }
-    .weapon-buttons {
-        margin-top: -2rem;
-        transform: scale(0.9);
-    }
-    .chooser {
-        transform: scale(2.5);
-    }
-    .modal-content {
-        transform: scale(0.8);
-    }
-    .modal-content-big {
-      margin: 10% auto;
-    }
-    .modal-content-small {
-      margin: 40% auto;
-    }
+  main {
+    max-width: 100%;
+  }
+  .logo-container {
+    transform: scale(0.7);
+  }
+  header {
+    padding-top: 5px;
+    height: 65px;
+  }
+  .banners {
+    display: none;
+  }
+  .scoreboard {
+    transform: scale(0.8);
+  }
+  .scores-container {
+    max-width: 320px;
+    transform: scale(0.9);
+  }
+  .versus {
+    width: 35px;
+  }
+  .weapons-btn {
+    height: 100px;
+    transform: scale(0.9);
+  }
+  .weapon-buttons {
+    margin-top: -2rem;
+    transform: scale(0.9);
+  }
+  .chooser {
+    transform: scale(2.5);
+  }
+  .modal-content {
+    transform: scale(0.8);
+  }
+  .modal-content-big {
+    margin: 10% auto;
+  }
+  .modal-content-small {
+    margin: 40% auto;
+  }
 }
 
-
-
 @media screen and (min-width: 375px) and (max-width: 425px) {
-    main {
-        max-width: 100%;
-    }
-    .logo-container {
-        transform: scale(0.8);
-    }
-    header {
-        height: 90px;
-    }
-    .banners {
-        display: none;
-    }
-    .scores-container {
-        max-width: 380px;
-        transform: scale(0.9);
-    }
-    .versus {
-        width: 50px;
-    }
-    .weapons-btn {
-        transform: scale(0.9);
-    }
-    .weapon-buttons {
-        max-width: 400px;
-    }
-    .chooser {
-        transform: scale(2.5);
-    }
-    .modal-content {
-        transform: scale(0.8);
-    }
-    .modal-content-big {
-      margin: 10% auto;
-    }
-    .modal-content-small {
-      margin: 40% auto;
-    }
+  main {
+    max-width: 100%;
+  }
+  .logo-container {
+    transform: scale(0.8);
+  }
+  header {
+    height: 90px;
+  }
+  .banners {
+    display: none;
+  }
+  .scores-container {
+    max-width: 380px;
+    transform: scale(0.9);
+  }
+  .versus {
+    width: 50px;
+  }
+  .weapons-btn {
+    transform: scale(0.9);
+  }
+  .weapon-buttons {
+    max-width: 400px;
+  }
+  .chooser {
+    transform: scale(2.5);
+  }
+  .modal-content {
+    transform: scale(0.8);
+  }
+  .modal-content-big {
+    margin: 10% auto;
+  }
+  .modal-content-small {
+    margin: 40% auto;
+  }
 }
