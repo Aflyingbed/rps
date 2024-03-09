@@ -353,7 +353,7 @@ footer {
   );
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   main {
     max-width: 100%;
   }
@@ -399,7 +399,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 375px) and (max-width: 425px) {
+@media screen and (min-width: 376px) and (max-width: 425px) {
   main {
     max-width: 100%;
   }
@@ -439,45 +439,11 @@ footer {
   }
 }
 
-@media screen and (min-width: 425px) and (max-width: 1024px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
   main {
     max-width: 100%;
   }
   .banners {
     display: none;
-  }
-  .logo-container {
-    transform: scale(0.8);
-  }
-  header {
-    height: 90px;
-  }
-  .banners {
-    display: none;
-  }
-  .scores-container {
-    max-width: 380px;
-    transform: scale(0.9);
-  }
-  .versus {
-    width: 50px;
-  }
-  .weapons-btn {
-    transform: scale(0.9);
-  }
-  .weapon-buttons {
-    max-width: 400px;
-  }
-  .chooser {
-    transform: scale(2.5);
-  }
-  .modal-content {
-    transform: scale(0.8);
-  }
-  .modal-content-big {
-    margin: 10% auto;
-  }
-  .modal-content-small {
-    margin: 40% auto;
   }
 }
